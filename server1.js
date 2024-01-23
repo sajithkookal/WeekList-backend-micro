@@ -150,6 +150,7 @@ app.post("/weeklist", authenticateToken, async (req, res) => {
 });
 app.put("/weeklist/:id", async (req, res) => {
     const { id } = req.params;
+    const { tasks } = req.body;
 
     try {
         const weekList = await WeekList.findById(id);
@@ -164,6 +165,8 @@ app.put("/weeklist/:id", async (req, res) => {
         }
 
         // Perform the update (modify weekList.tasks, etc.)
+         weekList.tasks = tasks;
+
         // Save the updated week list
         await weekList.save();
 
