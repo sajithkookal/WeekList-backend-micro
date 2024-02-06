@@ -99,7 +99,7 @@ app.post("/login", async (req, res) => {
 });
 // Authentication Middleware
 const authenticateToken = (req, res, next) => {
-    const { jwToken } = req.headers;
+    const  jwToken  = req.header('Authorization');
 
     if (!jwToken) {
         return res.status(401).json({ message: "Unauthorized" });
