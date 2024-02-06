@@ -13,8 +13,7 @@ const taskSchema = new mongoose.Schema({
 });
 const weekListSchema = new mongoose.Schema({
   userId: {
-    type: String,
-    ref: "User",
+    type: mongoose.Types.ObjectId,
   },
   weekNumber: Number,
   tasks: [taskSchema],
