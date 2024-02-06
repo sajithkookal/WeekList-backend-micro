@@ -11,7 +11,6 @@ const taskSchema = new mongoose.Schema({
     default: null,
   },
 });
-
 const weekListSchema = new mongoose.Schema({
   userId: {
     type: String,
